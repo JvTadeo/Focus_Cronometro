@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometros Focus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="timerContent">
+        <div class="timer">
+            <h3 id="timer"></h3>
+            <button id="stop">Pausa</button>
+            <button id="start">Iniciar</button>
+        </div>
+        <div class="config">
+            <button id="reset">Resetar</button>
+            <button id="config">Configurar</button>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p>Digite o tempo</p>
+            <input id="input" type="number" placeholder="Digite em minutos">
+            <button type="submit" id="save">Salvar</button>
+            <button id="cancel">Cancelar</button>
+        </div>
+    </div>
+    <script type="module" src="scripts/controller/util.js" defer></script>
+    <script type="module" src="scripts/controller/timerController.js"defer></script>
+    <script type="module" src="scripts/timer.js" defer></script>
+</body>
+</html>
