@@ -19,6 +19,9 @@ export class TimerController{
         this._saveBtnModal = document.querySelector("#save");
         this._cancelBtnModal = document.querySelector("#cancel");
         this._inputModal = document.querySelector("#input");
+        // Audio Source
+        this._btnSound = document.querySelector("#btnSound");
+        this._finishedTaks = document.querySelector("#zeroSound");
 
         //Variables
         this._countDownInterval = null;
@@ -38,22 +41,28 @@ export class TimerController{
     
 
     initEvents(){   
-          
+        this._btnSound.src = '../../audio/click.mp3'
+        this._finishedTaks.src = '../../audio/Alarm_Zero.mp3'
+    
         this._startBtn.addEventListener("click", () => {
             this.start();
+            this._btnSound.play();
         })
         this._pauseBtn.addEventListener("click", () =>{
             this.stop();
+            this._btnSound.play();
         })
 
         this._configBtn.addEventListener("click", () => {
             this._modal.style.display = "block";
+            this._btnSound.play();
         })
 
         this._resetBtn.addEventListener("click", () =>{
             this._totalTimer = this._defaultTimer * 60 * 1000;
             this._formatteTime = this.util.formatTimer(this._totalTimer);
             this.timer.innerHTML = this._formatteTime;
+            this._btnSound.play();
         })
 
         this._saveBtnModal.addEventListener("click", (e) => {
@@ -90,6 +99,10 @@ export class TimerController{
 
             this._formatteTime = this.util.formatTimer(this._totalTimer);
             this._timer.innerHTML = this._formatteTime;
+
+            if(this._totalTimer == 0) {
+                this._finishedTaks.play();
+            }
 
         }, 1000);
     }

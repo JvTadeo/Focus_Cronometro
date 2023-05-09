@@ -11,10 +11,10 @@
     <div class="timerContent">
         <div class="timer">
             <h3 id="timer"></h3>
-            <button id="stop">Pausa</button>
-            <button id="start">Iniciar</button>
         </div>
         <div class="config">
+            <button id="stop">Pausa</button>
+            <button id="start">Iniciar</button>
             <button id="reset">Resetar</button>
             <button id="config">Configurar</button>
         </div>
@@ -27,6 +27,8 @@
             <button id="cancel">Cancelar</button>
         </div>
     </div>
+    <audio id="btnSound"></audio>
+    <audio id="zeroSound"></audio>
     <script type="module" src="scripts/controller/util.js" defer></script>
     <script type="module" src="scripts/controller/timerController.js"defer></script>
     <script type="module" src="scripts/timer.js" defer></script>
