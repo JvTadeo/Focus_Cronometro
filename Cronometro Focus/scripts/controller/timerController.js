@@ -72,10 +72,10 @@ export class TimerController{
             this._formatteTime = this.util.formatTimer(this._totalTimer);
             this.timer.innerHTML = this._formatteTime;
             this._modal.style.display = "none";
+            this._btnSound.play();
         })
         this.closeModal();
     }
-
 
     closeModal(){
         window.onclick = (e) => {
@@ -84,6 +84,7 @@ export class TimerController{
             }
             if(e.target == this._cancelBtnModal){ //With Button
                 this._modal.style.display = 'none';
+                this._btnSound.play();
             }
         }
     }
