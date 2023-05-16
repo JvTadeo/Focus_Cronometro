@@ -45,8 +45,7 @@ export class TimerController{
         this._finishedTaks.src = 'audio/Alarm_Zero.mp3'
     
         this._startBtn.addEventListener("click", () => {
-            if(this._totalTimer < 1000) return;
-            
+            if(this._totalTimer < 1000) return;            
             this.start();
             this._btnSound.play();
         })
