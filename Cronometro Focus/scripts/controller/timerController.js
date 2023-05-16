@@ -93,8 +93,7 @@ export class TimerController{
     start(){        
         this._countDownInterval = setInterval(() => {        
             
-            this._totalTimer -= 1000;        
-            console.log(this._totalTimer);
+            this._totalTimer -= 1000;                
 
             if(this._totalTimer < 1000){
                 this.stop();
