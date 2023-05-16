@@ -93,14 +93,14 @@ export class TimerController{
         this._countDownInterval = setInterval(() => {        
             
             this._totalTimer -= 1000;        
-            if(this._totalTimer <= 0){
+
+            if(this._totalTimer == 0){
                 clearInterval(this._countDownInterval);
-                this.timer.innerHTML = "Fim"
             }
 
             this._formatteTime = this.util.formatTimer(this._totalTimer);
             this._timer.innerHTML = this._formatteTime;
-
+            
             if(this._totalTimer == 0) {
                 this._finishedTaks.play();
             }
