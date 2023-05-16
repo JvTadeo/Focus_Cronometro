@@ -45,6 +45,8 @@ export class TimerController{
         this._finishedTaks.src = 'audio/Alarm_Zero.mp3'
     
         this._startBtn.addEventListener("click", () => {
+            if(this._totalTimer < 1000) return;
+            
             this.start();
             this._btnSound.play();
         })
@@ -93,17 +95,15 @@ export class TimerController{
         this._countDownInterval = setInterval(() => {        
             
             this._totalTimer -= 1000;        
+            console.log(this._totalTimer);
 
-            if(this._totalTimer == 0){
-                clearInterval(this._countDownInterval);
+            if(this._totalTimer < 1000){
+                this.stop();
+                this._finishedTaks.play();
             }
 
             this._formatteTime = this.util.formatTimer(this._totalTimer);
-            this._timer.innerHTML = this._formatteTime;
-            
-            if(this._totalTimer == 0) {
-                this._finishedTaks.play();
-            }
+            this._timer.innerHTML = this._formatteTime;        
 
         }, 1000);
     }
