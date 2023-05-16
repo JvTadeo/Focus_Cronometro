@@ -41,8 +41,8 @@ export class TimerController{
     
 
     initEvents(){   
-        this._btnSound.src = '../../audio/click.mp3'
-        this._finishedTaks.src = '../../audio/Alarm_Zero.mp3'
+        this._btnSound.src = 'audio/click.mp3'
+        this._finishedTaks.src = 'audio/Alarm_Zero.mp3'
     
         this._startBtn.addEventListener("click", () => {
             this.start();
